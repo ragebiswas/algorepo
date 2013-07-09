@@ -17,6 +17,8 @@ Nothing here is guaranteed to work, but if it helps you, I'd be glad to know :-)
   * [Google Code Jam](https://code.google.com/codejam/)
   * [Sphere Online Judge](http://www.spoj.pl/) 
 
-Contact me for any questions. 
+The `practice` folder contains assorted programs not specific to any programming site / contest.
+
+Feel free to contact me for any questions. 
 
 
