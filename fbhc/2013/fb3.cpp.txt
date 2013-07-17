@@ -1,0 +1,146 @@
+#include <vector>
+#include <iostream>
+#include <map>
+#include <cassert>
+#include <algorithm>
+#include <list>
+#include <set>
+
+using namespace std;
+
+int fixlist(list<int>& ka) 
+{
+	list<int>::iterator it, prev;
+	bool done = false;
+	int tmp;
+
+	int first = ka.front();
+	if(first > 1) {
+		ka.push_front(1);
+		ka.pop_back();
+		return 1;
+	}
+	else {
+
+		it = ka.begin(); prev = it;
+		for(it = ka.begin(); it != ka.end(); it++) {
+			int cur = *it;
+			if(cur - *prev > 1) {
+				tmp = *prev + 1;
+				ka.insert(it, tmp);
+				ka.pop_back();
+				done = true;
+				return tmp;
+			}
+			prev = it;
+		}
+
+		if(it == ka.end()) {
+			int tmp = *prev+1;
+			ka.pop_back();
+			ka.push_back(tmp);
+			return tmp;
+		}
+	}	
+}
+
+
+int getminfromset(set<int>& s) 
+{
+	int first = *(s.begin());
+	if(first > 0) {
+		//s.erase(s.begin());
+		s.insert(0);
+		return 0;
+	}
+
+	set<int>::iterator it = s.begin();
+	set<int>::iterator prev = it;
+	int tmp;
+
+	for(it = s.begin(); it != s.end(); it++) {
+		int cur = *it;
+		if(cur - *prev > 1) {
+			tmp = *prev + 1;
+			//s.erase(--s.end());
+			s.insert(tmp);
+			return tmp;
+		}
+		prev = it;
+	}
+
+	if(it == s.end()) {
+		tmp = *prev + 1;
+		//s.erase(--s.end());
+		s.insert(tmp);
+		//cout<<"\nfoocase";
+		return tmp;
+	}
+}
+
+void printlist(list<int> l){
+	list<int>::iterator li;
+	for(li=l.begin(); li!=l.end(); li++) {
+		cout<<*li<<"-";
+	}
+	cout<<endl;
+}
+
+int main() 
+{
+	int ncases=1;
+	//cin>>ncases;
+	//int n,k,a,b,c,r;
+
+
+	for(int i=0; i<ncases; i++) {
+		//cin>>n>>k>>a>>b>>c>>r;
+		//int n=97, k=39, a=34, b=37, c=656, r=97;
+		int n=186, k=75, a=68, b=16, c=539, r=186;
+		list<int> ka;
+		set<int> s;
+
+		
+		ka.push_front(a);
+		s.insert(a);
+		int last = a;
+
+		for(int j=1; j<k; j++) {
+			int tmp = (b*last+c) % r;
+			ka.push_back(tmp);
+			s.insert(tmp);
+			last = tmp;
+		}
+
+		/*ka.sort();
+		ka.clear();
+		s.clear();
+
+		s.insert(0); s.insert(0); s.insert(1);
+		ka.push_back(0);ka.push_back(0);ka.push_back(1);
+		k=3;
+		n=6;*/
+
+		int y = 1, tmp;
+		for(int x=k; x<=n; x++) {
+			assert(ka.size()==k);
+			y = getminfromset(s);
+			tmp = ka.front();
+			ka.pop_front();
+			if(s.find(tmp) != s.end() && ka.front() != tmp) s.erase(s.find(tmp));
+			//assert(s.size()==k);
+			//if(ka.front() == tmp) cout<<"moah!\n";
+			//cout<<"y="<<y;
+			ka.push_back(y);
+			
+			printlist(ka);
+		}
+		
+		cout<<"Case #"<<i+1<<": "<<y;
+		
+		cout<<endl;
+	}
+
+	system("pause");
+	return 0;
+}

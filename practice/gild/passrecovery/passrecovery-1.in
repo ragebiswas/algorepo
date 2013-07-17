@@ -1,0 +1,14 @@
+j0W82LBrSdUbw
+The Data Encryption Standard (DES) is a block cipher that uses shared secret encryption.
+It was selected by the National Bureau of Standards as an official Federal Information 
+Processing Standard (FIPS) for the United States in 1976 and which has subsequently 
+enjoyed widespread use internationally.
+It is based on a symmetric-key algorithm that uses a 56-bit key. The algorithm was 
+initially controversial with classified design elements, a relatively short key length, 
+and suspicions about a National Security Agency (NSA) backdoor.
+DES consequently came under intense academic scrutiny which motivated the modern 
+understanding of block ciphers and their cryptanalysis.
+DES is now considered to be insecure for many applications.
+This is chiefly due to the 56-bit key size being too small;
+in January, 1999, distributed.net and the Electronic Frontier Foundation collaborated 
+to publicly break a DES key in 22 hours and 15 minutes (see chronology).

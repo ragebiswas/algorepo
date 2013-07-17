@@ -1,0 +1,1 @@
+g++ -Wall -ggdb3 %1% && a.exe
