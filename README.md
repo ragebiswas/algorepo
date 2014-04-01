@@ -18,6 +18,7 @@ Nothing here is guaranteed to work, but if it helps you, I'd be glad to know :-)
   * [Google Code Jam](https://code.google.com/codejam/)
   * [Sphere Online Judge](http://www.spoj.pl/) 
   * [Peking Online Judge](http://poj.org/)
+  * [HackerEarth](http://www.hackerearth.com/)
 
 The `practice` folder contains assorted programs not specific to any programming site / contest.
 
