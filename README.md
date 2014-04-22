@@ -19,6 +19,7 @@ Nothing here is guaranteed to work, but if it helps you, I'd be glad to know :-)
   * [Sphere Online Judge](http://www.spoj.pl/) 
   * [Peking Online Judge](http://poj.org/)
   * [HackerEarth](http://www.hackerearth.com/)
+  * [UVA Online Judge] (http://uva.onlinejudge.org/) 
 
 The `practice` folder contains assorted programs not specific to any programming site / contest.
 
