@@ -20,8 +20,6 @@ int calc(map<int, int>& m, Color color)
 {
     int ret = 0, log2val;
     for (map<int,int>::iterator it = m.begin(); it != m.end(); ++it) {
-//        cout << "Node: " << it->first << " ";
-  //      cout << "Log2: " << log2(it->first) << "\n";
         log2val = log2(it->first);
         if (inverted) {
             if (log2val % 2 == 1 && color == BLACK) {
