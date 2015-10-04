@@ -1,2 +1,7 @@
 a.out*
 in.txt*
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
